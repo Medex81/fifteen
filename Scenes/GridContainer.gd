@@ -29,5 +29,6 @@ func _on_Button_pressed():
 	for i in GM.aModel:
 		var new_control = control.instance()
 		new_control.get_node("Control/ColorRect/Label").text = str(i)
+		if i == 0:
+			new_control.get_node("Control").set_visible(false)
 		add_child(new_control)
-	get_child(GM.empty_cell_idx).get_node("Control").set_visible(false)
